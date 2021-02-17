@@ -1,1 +1,0 @@
-const basicLightbox = require('basiclightbox');

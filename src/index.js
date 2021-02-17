@@ -2,7 +2,6 @@ import './sass/styles.scss';
 import refs from './js/refs';
 import apiService from './js/apiService';
 import './js/fetch-pictures';
-import './js/basiclightbox';
 import updatePicturesMarkup from './js/update-pictures-markup';
 
 
@@ -26,6 +25,7 @@ function fetchPictures() {
 
   apiService.fetchPictures().then(pictures => {
     updatePicturesMarkup(pictures);
+    refs.loadMoreBtn.classList.remove('is-hidden');
     refs.loadMoreBtn.disabled = false;
     refs.loadMoreBtnLabel.textContent = 'Load more';
     refs.loadMoreBtnSpinner.classList.add('is-hidden');
